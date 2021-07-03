@@ -1,0 +1,5 @@
+.git
+.idea
+venv
+*.md
+Dockerfile
