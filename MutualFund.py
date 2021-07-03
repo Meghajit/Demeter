@@ -19,7 +19,6 @@ class MutualFund:
             }
             html_response = session.request(method="GET", url=request_url, headers=headers)
             fund_house_option_tags = html_response.html.find('#NavHisMFName > option')
-            # remove the first option which is just a prompt
             del fund_house_option_tags[0]
             fund_houses = []
             for house in fund_house_option_tags:
