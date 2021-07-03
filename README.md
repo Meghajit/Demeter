@@ -2,6 +2,25 @@
 
 Demeter is an API to get all fund houses, their mutual fund schemes and the historic NAVs.
 
+## Steps
+
+#### 1. Install dependencies
+This project requires Python 3.7+ and pip
+
+`python3 -m pip install -r requirements.txt`
+
+#### 2. Run the server
+
+`FLASK_APP=api.py flask run --port=8080`
+
+### Alternatively, if you want to run it in docker
+
+#### 1.Build the image
+`docker build  -t demeter:0.0.1 .`
+
+#### 2. Run the container
+`docker run -p 8080:8080 -d demeter:0.0.1`
+
 ## REST Endpoints
 
 ### 1. Get all fund houses hosted: `GET /v1/fundhouses`
