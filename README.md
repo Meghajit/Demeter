@@ -120,3 +120,7 @@ Sample response
   }
 ]
 ```
+
+## Deploy to Heroku
+
+The yml file `heroku.yml` enables the user to build an image and deploy it to heroku using the dockerfile.
