@@ -11,6 +11,8 @@ RUN apt-get -y install python3-pip
 RUN python3 -m pip install --upgrade pip
 RUN apt-get -y install curl
 
+RUN whoami
+
 USER belmont
 
 ENV DEMETER_DIR /home/belmont/demeter/
