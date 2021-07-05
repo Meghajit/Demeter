@@ -23,6 +23,10 @@ ADD . $DEMETER_DIR
 
 WORKDIR $DEMETER_DIR
 
+RUN ls -la
+
+RUN pwd
+
 RUN python3 -m pip install --no-cache-dir -t /home/belmont/.local/bin --force-reinstall -r ./requirements.txt
 
 CMD flask run --port=8080 --host=0.0.0.0
