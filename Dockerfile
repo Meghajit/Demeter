@@ -11,10 +11,6 @@ RUN apt-get -y install python3-pip
 RUN python3 -m pip install --upgrade pip
 RUN apt-get -y install curl
 
-RUN whoami
-
-USER belmont
-
 ENV DEMETER_DIR /home/belmont/demeter/
 ENV PATH /home/belmont/.local/bin:$PATH
 ENV FLASK_APP="api.py"
@@ -25,10 +21,6 @@ ADD . $DEMETER_DIR
 
 WORKDIR $DEMETER_DIR
 
-RUN ls -la
-
-RUN pwd
-
-RUN python3 -m pip install --no-cache-dir -t /home/belmont/.local/bin --force-reinstall -r ./requirements.txt
+RUN python3 -m pip install -r requirements.txt
 
 CMD flask run --port=8080 --host=0.0.0.0
