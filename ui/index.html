@@ -1,0 +1,31 @@
+<html>
+<body>
+<h1>Graph</h1>
+<form>
+    <label for="fundHouse">Fund House</label>
+    <select id="fundHouse" name="fundHouse">
+        <option>Choose Fund House/AMC</option>
+    </select>
+    <br/>
+    <label for="schemeName">Scheme</label>
+    <select id="schemeName" name="schemeName">
+        <option>Choose a scheme</option>
+    </select>
+    <br/>
+    <label for="timeFrame">NAV Trend Duration</label>
+    <select id="timeFrame" name="timeFrame">
+        <option id="past-week">Past week</option>
+        <option id="past-month">Past 1 month</option>
+        <option id="past-six-months">Past 6 months</option>
+        <option id="past-one-year">Past 1 year</option>
+        <option id="past-three-years">Past 3 years</option>
+        <option id="past-five-years">Past 5 years</option>
+    </select>
+</form>
+<div>
+    <canvas id="myChart"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="text/javascript" src="js/mygraph.js"></script>
+</body>
+</html>
