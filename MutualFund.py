@@ -2,7 +2,6 @@ from requests_html import HTMLSession
 import json
 import datetime
 
-
 class MutualFund:
 
     def __init__(self):

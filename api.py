@@ -23,7 +23,10 @@ class Demeter:
 
     @app.route('/v1/nav', methods=["POST"])
     def get_historic_nav():
+        
         req_body = request.json
+
+
         start_date_splitted = req_body["startDate"].split('-')
         start_date = datetime.datetime(int(start_date_splitted[0]), int(start_date_splitted[1]),
                                        int(start_date_splitted[2]))
