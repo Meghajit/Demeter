@@ -1,6 +1,5 @@
 FROM ubuntu:18.04
 FROM httpd:2.4
-FROM python:3
 
 RUN groupadd container_users && useradd -ms /bin/bash -g container_users belmont
 RUN echo "Acquire::Check-Valid-Until \"false\";\nAcquire::Check-Date \"false\";" | cat > /etc/apt/apt.conf.d/10no--check-valid-until
@@ -10,8 +9,6 @@ RUN apt-get -y install python3-pip
 RUN python3 -m pip install --upgrade pip
 RUN apt-get -y install curl
 RUN apt-get -y install jq
-
-
 
 USER belmont
 
