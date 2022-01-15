@@ -16,10 +16,24 @@ This project requires Python 3.7+ and pip
 ### Alternatively, if you want to run it in docker
 
 #### 1.Build the image
-`docker build  -t demeter:0.0.1 .`
+`docker build  -t demeter:0.0.2 .`
 
 #### 2. Run the container
-`docker run -p 8080:8080 -d demeter:0.0.1`
+`docker run -p 8080:8080 -d demeter:0.0.2`
+
+
+### Frontend
+Demeter also offers a minimal UI to see the NAV of a scheme. If you want to run it locally, you can start the API 
+server as mentioned above and then expose the UI by serving the `ui` directory static files from any web server such as 
+Apache Web Server or Nginx Plus. Alternatively, if you want to serve it via Docker, you can follow the steps:
+
+#### 1.Build the image
+`docker build  -t demeter:0.0.2 .`
+
+#### 2. Run the container
+`docker run -d --name demeter -p 8080:80 -p 5000:5000 demeter:0.0.2`
+
+Demeter will start an Apache Web Server instance at port 8080 and serve the UI.
 
 ## REST Endpoints
 

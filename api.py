@@ -1,10 +1,11 @@
 import datetime
 from flask import Flask
 from flask import request
+from flask_cors import CORS,cross_origin
 from MutualFund import MutualFund
 
 app = Flask(__name__)
-
+CORS(app, resources=r'/v1/*')
 
 class Demeter:
 
@@ -22,7 +23,10 @@ class Demeter:
 
     @app.route('/v1/nav', methods=["POST"])
     def get_historic_nav():
+        
         req_body = request.json
+
+
         start_date_splitted = req_body["startDate"].split('-')
         start_date = datetime.datetime(int(start_date_splitted[0]), int(start_date_splitted[1]),
                                        int(start_date_splitted[2]))
